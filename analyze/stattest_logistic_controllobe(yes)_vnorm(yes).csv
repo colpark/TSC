@@ -1,0 +1,53 @@
+Logistic regression summary for select experiments.
+Null hypothesis: tuber-level statistics are not associated with the epileptogenic focus.
+Dependent variables: [0 1] a label indicating whether the lobe is epileptogenic or not.
+Independent variables: [a1 a2 ... a8] - variables for individual lobes.
+Mode: mask being used. either ground truth or prediction from deep learning.
+Vnorm: whether variables are normalized by the volume of each lobe.
+Control_lobe: a dummy variable indicating for the lobe is added to control for different lobes.
+Znorm: whether variables are znormalized by all subjects. This accounts for different tuber distribution across 8 target lobes
+Area(variable): volume of tubers in each lobe normalized by gross lobe volume.
+Ntuber(variable): number of tubers in each lobe normalized by gross lobe volume. can be critically affected by CC3D algorithm
+Intensity(variable): intensity distribution statistics of tubers in each lobe. Mean | std | 75 percentile | 90 percentile
+Cutoff: Holm-Bonferroni cutoff p-value for rejection.
+Reject H0: whether the null hypothesis is rejected. True means significant correlation.
+Correct: subject numbers with correct prediction for epileptogenic lobe.
+Wrong: subject numbers with correct prediction for epileptogenic lobe. 
+
+Mode, Variable, Control_lobe, Vnorm, Znorm, Corr_coeff, Corr_pvalue, Cutoff, Accuracy, Reject, Correct, Wrong
+gt_cystic_only,area,True, True,False,31.046488,0.000202,0.001429,0.500000, True, 39/44/63/106, 2/15/46/107
+gt_cystic_only,ntuber,True, True,False,8434.293394,0.153249,0.005556,0.500000, False, 39/46/63/106, 2/15/44/107
+gt_cystic_only,intensity,True, True,False,108540.274624,0.299429,0.007143,0.125000, False, 15, 2/39/44/46/63/106/107
+gt_tuber_only,area,True, True,False,1.682479,0.075159,0.003571,0.285714, False, 29/39/40/44/104/106, 10/12/15/2/3/45/46/50/59/62/63/100/102/105/107
+gt_tuber_only,ntuber,True, True,False,3786.697298,0.061224,0.002632,0.238095, False, 10/39/45/100/105, 12/15/29/2/3/40/44/46/50/59/62/63/102/104/106/107
+gt_tuber_only,intensity,True, True,False,-61666.528353,0.361340,0.010000,0.047619, False, 46, 10/12/15/29/2/39/3/40/44/45/50/59/62/63/100/102/104/105/106/107
+gt_tuber_and_cystic,area,True, True,False,1.812447,0.049010,0.002500,0.285714, False, 29/39/40/44/104/106, 10/12/15/2/3/45/46/50/59/62/63/100/102/105/107
+gt_tuber_and_cystic,ntuber,True, True,False,3676.668870,0.069920,0.002941,0.238095, False, 10/39/45/100/105, 12/15/29/2/3/40/44/46/50/59/62/63/102/104/106/107
+gt_tuber_and_cystic,intensity,True, True,False,19739.156731,0.751443,0.025000,0.142857, False, 39/46/106, 10/12/15/29/2/3/40/44/45/50/59/62/63/100/102/104/105/107
+gt_cystic_only,area,True, False,False,0.000157,0.000485,0.001515,0.500000, True, 39/44/63/106, 2/15/46/107
+gt_cystic_only,ntuber,True, False,False,0.060094,0.144255,0.004545,0.375000, False, 39/44/106, 2/15/46/63/107
+gt_cystic_only,intensity,True, False,False,1.585735,0.081968,0.003846,0.250000, False, 15/44, 2/39/46/63/106/107
+gt_tuber_only,area,True, False,False,0.000013,0.007506,0.001923,0.333333, False, 10/15/29/39/44/45/104, 12/2/3/40/46/50/59/62/63/100/102/105/106/107
+gt_tuber_only,ntuber,True, False,False,0.031909,0.001247,0.001563,0.380952, True, 10/15/29/39/45/50/102/104, 12/2/3/40/44/46/59/62/63/100/105/106/107
+gt_tuber_only,intensity,True, False,False,0.456667,0.503946,0.016667,0.190476, False, 10/39/44/46, 12/15/29/2/3/40/45/50/59/62/63/100/102/104/105/106/107
+gt_tuber_and_cystic,area,True, False,False,0.000014,0.004888,0.001786,0.380952, False, 10/15/29/39/44/45/104/106, 12/2/3/40/46/50/59/62/63/100/102/105/107
+gt_tuber_and_cystic,ntuber,True, False,False,0.031486,0.001430,0.001613,0.380952, True, 10/15/29/39/45/50/102/104, 12/2/3/40/44/46/59/62/63/100/105/106/107
+gt_tuber_and_cystic,intensity,True, False,False,1.167137,0.046933,0.002273,0.238095, False, 10/39/44/46/106, 12/15/29/2/3/40/45/50/59/62/63/100/102/104/105/107
+gt_cystic_only,area,False, True,False,30.825546,0.000188,0.001389,0.500000, True, 39/44/63/106, 2/15/46/107
+gt_cystic_only,ntuber,False, True,False,8334.945644,0.152981,0.005000,0.500000, False, 39/46/63/106, 2/15/44/107
+gt_cystic_only,intensity,False, True,False,142035.286430,0.102606,0.004167,0.125000, False, 15, 2/39/44/46/63/106/107
+gt_tuber_only,area,False, True,False,1.685046,0.073597,0.003333,0.285714, False, 29/39/40/44/104/106, 10/12/15/2/3/45/46/50/59/62/63/100/102/105/107
+gt_tuber_only,ntuber,False, True,False,3657.016092,0.062795,0.002778,0.238095, False, 10/39/45/100/105, 12/15/29/2/3/40/44/46/50/59/62/63/102/104/106/107
+gt_tuber_only,intensity,False, True,False,-61470.531690,0.324862,0.008333,0.047619, False, 46, 10/12/15/29/2/39/3/40/44/45/50/59/62/63/100/102/104/105/106/107
+gt_tuber_and_cystic,area,False, True,False,1.814720,0.047906,0.002381,0.285714, False, 29/39/40/44/104/106, 10/12/15/2/3/45/46/50/59/62/63/100/102/105/107
+gt_tuber_and_cystic,ntuber,False, True,False,3553.470717,0.071433,0.003125,0.238095, False, 10/39/45/100/105, 12/15/29/2/3/40/44/46/50/59/62/63/102/104/106/107
+gt_tuber_and_cystic,intensity,False, True,False,9570.289974,0.868628,0.050000,0.142857, False, 39/46/106, 10/12/15/29/2/3/40/44/45/50/59/62/63/100/102/104/105/107
+gt_cystic_only,area,False, False,False,0.000157,0.000438,0.001471,0.500000, True, 39/44/63/106, 2/15/46/107
+gt_cystic_only,ntuber,False, False,False,0.055215,0.160350,0.006250,0.375000, False, 39/44/106, 2/15/46/63/107
+gt_cystic_only,intensity,False, False,False,1.789786,0.029221,0.002083,0.250000, False, 15/44, 2/39/46/63/106/107
+gt_tuber_only,area,False, False,False,0.000013,0.008605,0.002000,0.333333, False, 10/15/29/39/44/45/104, 12/2/3/40/46/50/59/62/63/100/102/105/106/107
+gt_tuber_only,ntuber,False, False,False,0.025610,0.003444,0.001667,0.380952, False, 10/15/29/39/45/50/102/104, 12/2/3/40/44/46/59/62/63/100/105/106/107
+gt_tuber_only,intensity,False, False,False,0.475432,0.483095,0.012500,0.190476, False, 10/39/44/46, 12/15/29/2/3/40/45/50/59/62/63/100/102/104/105/106/107
+gt_tuber_and_cystic,area,False, False,False,0.000013,0.005651,0.001852,0.380952, False, 10/15/29/39/44/45/104/106, 12/2/3/40/46/50/59/62/63/100/102/105/107
+gt_tuber_and_cystic,ntuber,False, False,False,0.025297,0.003836,0.001724,0.380952, False, 10/15/29/39/45/50/102/104, 12/2/3/40/44/46/59/62/63/100/105/106/107
+gt_tuber_and_cystic,intensity,False, False,False,1.175726,0.044146,0.002174,0.238095, False, 10/39/44/46/106, 12/15/29/2/3/40/45/50/59/62/63/100/102/104/105/107

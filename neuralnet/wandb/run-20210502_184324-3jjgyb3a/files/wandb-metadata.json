@@ -1,0 +1,41 @@
+{
+    "os": "Linux-5.4.0-66-generic-x86_64-with-debian-buster-sid",
+    "python": "3.7.9",
+    "heartbeatAt": "2021-05-02T22:43:27.972238",
+    "startedAt": "2021-05-02T22:43:24.467080",
+    "docker": null,
+    "gpu": "TITAN X (Pascal)",
+    "gpu_count": 2,
+    "cpu_count": 20,
+    "cuda": "10.1.105",
+    "args": [
+        "--version",
+        "datav3_coronal_both",
+        "--mask_version",
+        "v3",
+        "--n_cuda",
+        "1",
+        "--total_epoch",
+        "500",
+        "--coronal",
+        "True",
+        "--modality",
+        "both",
+        "--batch_size",
+        "12",
+        "--fold_start",
+        "6"
+    ],
+    "state": "running",
+    "codePath": "neuralnet/main.py",
+    "program": "main.py",
+    "git": {
+        "remote": "https://github.com/colpark/TSC.git",
+        "commit": "81edd8c11d8cbd88ca8093f056858bfaf406fdf8"
+    },
+    "email": "dkp2129@columbia.edu",
+    "root": "/home/socrates/david/tsc/codebase/github",
+    "host": "socrates-desktop",
+    "username": "socrates",
+    "executable": "/home/socrates/anaconda3/envs/py3/bin/python"
+}
